@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .navbar.scrolled {
+            background-color: #4982bc;
+        }
+        .navbar .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+        }
+        .navbar .nav-link:hover {
+            color: #ffc107 !important;
+        }
+        .intro-section {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .intro-section img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        .projects-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        .skills-section {
+            padding: 50px 0;
+        }
+        .skills-chart {
+            width: 70%;
+            margin: 0 auto;
+        }
+        .skill {
+            margin-bottom: 20px;
+        }
+        .skill-title {
+            font-weight: bold;
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        .project {
+            transition: transform 0.3s;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            padding: 50px 0;
+            background-color: #f1f1f1;
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Experiences">Experiences</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="intro-section">
+        <div class="container">
+            <img src="rahul image crop.jpg" alt="rahul's Photo">
+            <h1>Hello, I'm Rahul Rana</h1>
+            <p>I am a second-year B.Tech student specializing in Artificial Intelligence and Machine Learning (AIML). Welcome to my personal portfolio website, where you can come to know about my skills, Experiences, projects and many things </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section" style="background-color:rgb(243, 162, 111);">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row">
+                <div class="col-md-4 project">
+                    <div class="card">
+                        <img src="calcu.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body" style="background-color: #feb47b;">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">A desktop-based calculator application built using Java. This project includes a user-friendly interface for performing basic arithmetic operations like addition, subtraction, multiplication, and division.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project">
+                    <div class="card">
+                        <img src="todo.jpg"  height="267px" class="card-img-top" alt="Project 2">
+                        <div class="card-body" style="background-color: #feb47b;>
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">A functional to-do list application where users can add, edit, delete, and mark tasks as complete.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 project">
+                    <div class="card">
+                        <img src="blog.jpg" height="268px"  class="card-img-top" alt="Project 3">
+                        <div class="card-body" style="background-color: #feb47b;>
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text"> A responsive blog template that can be used to post articles, images, and multimedia content.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section" style="background-color: #e8c681;">
+        <div class="container">
+            <h2 class="text-center">Skills</h2>
+            <div class="skills-chart">
+                <div class="skill">
+                    <p class="skill-title">HTML & CSS</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+               
+                <div class="skill">
+                    <p class="skill-title">JavaScript</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">C++</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">DSA</p>
+                    <div class="progress" >
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">Python</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">Ethical Hacking</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">Machine Learning</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 65%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">65%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">Git & GitHub</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="skill-title">Communication</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-form" style="background-color: #ca6c54;">
+        <div class="container">
+            <h2 class="text-center">Get in Touch</h2>
+            <form action="mailto:devankkhare15@gmial.com" method="post" enctype="text/plain">
+                <div class="mb-3" >
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" style="background-color: #edccb3;" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" style="background-color: #edccb3;" id="email" placeholder = "Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4"  style="background-color: #edccb3;" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact me at: <a href="mailto:judorahul92@gmail.com">judorahul92@gmail.com</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
