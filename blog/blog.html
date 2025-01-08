@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Template</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #edf2f7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        nav .search-bar input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        nav .category-filter select {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: #f7fafc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-post h2 {
+            margin: 1rem;
+            font-size: 1.5rem;
+            color: #2d3748;
+        }
+
+        .blog-post p {
+            margin: 1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2d3748;
+            color: #a0aec0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the my Bloging website</h1>
+        <p>Discover articles, insights, and inspiration in tech, lifestyle, and travel.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search articles...">
+        </div>
+        <div class="category-filter">
+            <select>
+                <option value="all">All Categories</option>
+                <option value="tech">Tech</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="AI">AI</option>
+                <option value="travel">Travel</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="container" style="background-color: #a0aec0;">
+        <div class="blog-posts" >
+            <div class="blog-post" >
+                <img src="AI.jpg" alt="Tech Image">
+                <h2>Innovations in Artificial Intelligence</h2>
+                <p>AI is shaping the future of industries, from healthcare to autonomous vehicles...</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="routine.jpg" alt="Lifestyle Image">
+                <h2>Transform Your Morning Routine</h2>
+                <p>Start your day with practices that enhance productivity and well-being...</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="adventure.webp" alt="Travel Image">
+                <h2>Exploring the Alps</h2>
+                <p>Experience breathtaking views and adventures in the heart of Europe...</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="cities.jpg" alt="Tech Blog Image">
+                <h2>Building Smarter Cities</h2>
+                <p>Technology-driven solutions are making urban areas more sustainable...</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="mindfullnes.jpg" alt="Lifestyle Image">
+                <h2>Mindfulness in Everyday Life</h2>
+                <p>Incorporate mindfulness practices to reduce stress and increase focus...</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="beaches.jpg" alt="Travel Blog Image">
+                <h2>Hidden Beaches of Southeast Asia</h2>
+                <p>Discover serene and untouched beaches in this tropical paradise...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Vibrant Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            const blogPosts = document.querySelectorAll(".blog-post");
+
+            blogPosts.forEach((post) => {
+                const title = post.querySelector("h2").textContent.toLowerCase();
+                const content = post.querySelector("p").textContent.toLowerCase();
+
+                if (title.includes(query) || content.includes(query)) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
